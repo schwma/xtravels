@@ -1,0 +1,15 @@
+###
+POST http://localhost:4004/odata/v4/travel/Travels
+Authorization: Basic alice:
+Content-Type: application/json
+
+{
+  "ID": 0,
+  "IsActiveEntity": true,
+  "BeginDate": "2024-01-01",
+  "EndDate": "2024-01-15",
+  "Agency_ID": "070007",
+  "Customer_ID": "000608",
+  "Description": null,
+  "BookingFee": null
+}

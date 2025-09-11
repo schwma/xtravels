@@ -9,9 +9,10 @@
     "jest": "npx jest"
   },
   "dependencies": {
+    "@cap-js/assert": "file:.plugins/assert",
+    "@cap-js/xsrv-federation": ".plugins/fed-xrv",
     "@capire/common": "*",
     "@capire/xflights-data": "*",
-    "@cap-js/xsrv-federation": ".plugins/fed-xrv",
     "@sap-cloud-sdk/http-client": "^4",
     "@sap/cds": ">=9",
     "express": "^4"
@@ -20,5 +21,10 @@
     "@cap-js/cds-test": "*",
     "@cap-js/sqlite": ">=2"
   },
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "cds": {
+    "fiori": {
+      "bypass_draft": true
+    }
+  }
 }

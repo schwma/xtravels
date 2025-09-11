@@ -22,6 +22,23 @@ service TravelService {
   // Export functions to export download travel data
   function exportJSON() returns LargeBinary @Core.MediaType:'application/json';
   function exportCSV() returns LargeBinary @Core.MediaType:'text/csv';
+
+  annotate Travels with {
+    @assert: (case
+      when Description is null  then 'is missing'
+      when trim(Description)='' then 'must not be empty'
+    end)
+    Description;
+    @assert: (case
+      // when price is not null and not price between 0 and 500 then 'must be between 0 and 500'
+      when BookingFee <= 0 or BookingFee > 500 then 'must be between 0 and 500'
+    end)
+    // @assert: (case
+    //   when BookingFee is null then null // genre may be null
+    //   when not exists BookingFee then 'does not exist'
+    // end)
+    BookingFee;
+  };
 }
 
 
