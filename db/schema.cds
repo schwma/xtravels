@@ -11,7 +11,7 @@ entity Travels : managed {
   key ID       : Integer default 0 @readonly;
   Description  : String(1024);
   BeginDate    : Date default $now;
-  EndDate      : Date default $now;
+  EndDate      : Date;
   BookingFee   : Price default 0;
   TotalPrice   : Price @readonly;
   Currency     : Currency default 'EUR';
